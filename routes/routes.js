@@ -41,5 +41,26 @@ app.post('/cliente', (req, res) => {
 
 });
 
+app.get('/cliente', (req, res)=>{
+
+    Cliente.find({ /*estado: true*/ }, 'email celular nombre')
+        .exec( (err, links) => {
+
+            if ( err ) {
+                return res.status(400).json({
+                    ok: false,
+                    err
+                });
+            }
+
+            res.json({
+                ok:true,
+                links
+            });
+
+        });
+
+});
+
 
 module.exports = app;
