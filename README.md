@@ -13,7 +13,7 @@
 ## Con nodemon
 ```npm run nodemon```
 
-## Documentacion del server res
+## Documentacion del server rest
 ### API Clientes
 
 https://documenter.getpostman.com/view/3045803/TVKHUFHb
