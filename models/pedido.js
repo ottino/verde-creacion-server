@@ -36,7 +36,11 @@ let userSchema = new Schemma({
     estado: {
         type: String,
         default: 'PENDIENTE'
-    }
+    },
+    cliente: {
+        type: Schemma.Types.ObjectId,
+        ref: 'Cliente'
+      }
 });
 
 
