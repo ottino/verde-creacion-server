@@ -218,6 +218,26 @@ app.get('/pedido', (req, res)=>{
 
             });
 
+    } else if ( body._estado ) {
+
+        return Pedido.find({ estado : body._estado })
+            .populate('cliente', 'nombre email')
+            .exec((err, pedidoDB) => {
+
+                if ( err ) {
+                    return res.status(400).json({
+                        ok: false,
+                        err
+                    });
+                }
+
+                res.json({
+                    ok:true,
+                    pedidoDB
+                });
+
+            });
+
     } else {
 
         return Pedido.find({})
