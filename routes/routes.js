@@ -46,8 +46,8 @@ app.post('/cliente', (req, res) => {
 
 app.get('/cliente', (req, res)=>{
 
-    Cliente.find({ /*estado: true*/ }, 'email celular nombre')
-        .exec( (err, links) => {
+    Cliente.find({ /*estado: true*/ }, '_id email celular nombre')
+        .exec( (err, clienteDB) => {
 
             if ( err ) {
                 return res.status(400).json({
@@ -57,8 +57,8 @@ app.get('/cliente', (req, res)=>{
             }
 
             res.json({
-                ok:true,
-                links
+                ok: true,
+                clienteDB
             });
 
         });
