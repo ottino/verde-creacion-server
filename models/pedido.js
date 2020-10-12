@@ -22,16 +22,22 @@ let userSchema = new Schemma({
     },
     cantidad: {
         type: String,
+        default: 0
     },
     precio_u: {
         type: String,
+        default: 0
     },
     costo_envio: {
         type: String,
         default: 0
     },
+    obs_envio: {
+        type: String,
+    },
     monto_total: {
         type: String,
+        default: 0
     },
     estado: {
         type: String,
